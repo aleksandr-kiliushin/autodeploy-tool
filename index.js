@@ -62,3 +62,5 @@ rl.question("Enter project path:", async input => {
 		console.log(`Server running at http://${HOSTNAME}:${PORT}/`);
 	});
 })
+
+// /home/me/Documents/code-other/test1
