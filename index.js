@@ -33,24 +33,23 @@ rl.question("Enter project path:", async input => {
 
 		console.log(reqData)
 
-		// const execCommand = async (dirPathJoined, command) => {
-		// 	const { error, stderr, stdout } = await exec(command, { cwd: dirPathJoined });
+		const execCommand = async (dirPathJoined, command) => {
+			const { error, stderr, stdout } = await exec(command, { cwd: dirPathJoined });
 		
-		// 	if (error) {
-		// 		console.log(`error: ${error.message}`);
-		// 		return;
-		// 	}
+			if (error) {
+				console.log(`error: ${error.message}`);
+				return;
+			}
 		
-		// 	if (stderr) {
-		// 		console.log(`stderr: ${stderr}`);
-		// 		return;
-		// 	}
+			if (stderr) {
+				console.log(`stderr: ${stderr}`);
+				return;
+			}
 		
-		// 	console.log(`stdout: ${stdout}`);
-		// }
+			console.log(`stdout: ${stdout}`);
+		}
 		
-		// await execCommand(dirPathJoined, 'ls')
-		// await execCommand(dirPathJoined, 'docker-compose down')
+		await execCommand(dirPathJoined, 'ls')
 		// await execCommand(dirPathJoined, 'git fetch origin')
 		// await execCommand(dirPathJoined, 'git pull origin master')
 		// await execCommand(dirPathJoined, 'docker-compose down')
