@@ -64,8 +64,8 @@ rl.question('Enter project path:', async input => {
 		// await execCommand(dirPathJoined, 'docker-compose up')
 	})
 
-	server.listen(PORT, HOSTNAME, () => {
-		console.log(`Server running at http://${HOSTNAME}:${PORT}/`)
+	server.listen(PORT, () => {
+		console.log(`Server running at http://localhost:${PORT}/`)
 	})
 })
 
