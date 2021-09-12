@@ -17,8 +17,6 @@ rl.question('Enter project path:', async input => {
 
 	rl.close()
 
-	await execCommand(dirPathJoined, 'ls')
-
 	const HOSTNAME = '127.0.0.1'
 	const PORT = 7095
 
@@ -54,6 +52,8 @@ rl.question('Enter project path:', async input => {
 
 		// 	console.log(`stdout: ${stdout}`)
 		// }
+
+		// await execCommand(dirPathJoined, 'ls')
 
 		// await execCommand(dirPathJoined, 'git fetch origin')
 		// await execCommand(dirPathJoined, 'git pull origin master')
