@@ -17,6 +17,8 @@ rl.question('Enter project path:', async input => {
 
 	rl.close()
 
+	await execCommand(dirPathJoined, 'ls')
+
 	const HOSTNAME = '127.0.0.1'
 	const PORT = 7095
 
@@ -24,6 +26,8 @@ rl.question('Enter project path:', async input => {
 		// res.statusCode = 200
 		// res.setHeader('Content-Type', 'application/json')
 		// res.end('Hello World')
+
+		console.log('hit')
 
 		if (req.url !== '/update-portal-app') {
 			return
@@ -33,25 +37,24 @@ rl.question('Enter project path:', async input => {
 
 		console.log(reqData)
 
-		const execCommand = async (dirPathJoined, command) => {
-			const { error, stderr, stdout } = await exec(command, {
-				cwd: dirPathJoined,
-			})
+		// const execCommand = async (dirPathJoined, command) => {
+		// 	const { error, stderr, stdout } = await exec(command, {
+		// 		cwd: dirPathJoined,
+		// 	})
 
-			if (error) {
-				console.log(`error: ${error.message}`)
-				return
-			}
+		// 	if (error) {
+		// 		console.log(`error: ${error.message}`)
+		// 		return
+		// 	}
 
-			if (stderr) {
-				console.log(`stderr: ${stderr}`)
-				return
-			}
+		// 	if (stderr) {
+		// 		console.log(`stderr: ${stderr}`)
+		// 		return
+		// 	}
 
-			console.log(`stdout: ${stdout}`)
-		}
+		// 	console.log(`stdout: ${stdout}`)
+		// }
 
-		await execCommand(dirPathJoined, 'ls')
 		// await execCommand(dirPathJoined, 'git fetch origin')
 		// await execCommand(dirPathJoined, 'git pull origin master')
 		// await execCommand(dirPathJoined, 'docker-compose down')
