@@ -24,21 +24,25 @@ rl.question('Enter project path:', async input => {
 		if (JSON.parse(reqData).ref !== 'refs/heads/master') return
 
 		const execCommand = async command => {
-			const { error, stderr, stdout } = await exec(command, {
-				cwd: dirPathJoined,
-			})
+			try {
+				const { error, stderr, stdout } = await exec(command, {
+					cwd: dirPathJoined,
+				})
 
-			if (error) {
-				console.log(`error: ${error.message}`)
-				return
+				if (error) {
+					console.log(`error: ${error.message}`)
+					return
+				}
+
+				if (stderr) {
+					console.log(`stderr: ${stderr}`)
+					return
+				}
+
+				console.log(`stdout: ${stdout}`)
+			} catch (e) {
+				console.log(e)
 			}
-
-			if (stderr) {
-				console.log(`stderr: ${stderr}`)
-				return
-			}
-
-			console.log(`stdout: ${stdout}`)
 		}
 
 		await execCommand('git fetch origin')
