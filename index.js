@@ -35,7 +35,7 @@ rl.question('Enter project path:', async input => {
 		// console.log(req)
 
 		const reqData = await getReqData(req)
-		console.log(reqData)
+		console.log(reqData.ref)
 
 		// const execCommand = async (dirPathJoined, command) => {
 		// 	const { error, stderr, stdout } = await exec(command, {
