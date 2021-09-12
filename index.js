@@ -28,11 +28,13 @@ rl.question('Enter project path:', async input => {
 		console.log('hit')
 
 		if (req.url !== '/update-portal-app') {
+			console.log('url is not [/update-portal-app], return')
 			return
 		}
 
-		const reqData = await getReqData(req)
+		// console.log(req)
 
+		const reqData = await getReqData(req)
 		console.log(reqData)
 
 		// const execCommand = async (dirPathJoined, command) => {
