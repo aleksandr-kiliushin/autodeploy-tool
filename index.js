@@ -21,9 +21,9 @@ rl.question("Enter project path:", async input => {
 	const PORT = 7095;
 
 	const server = http.createServer(async (req, res) => {
-		res.statusCode = 200
-		res.setHeader('Content-Type', 'text/plain')
-		res.end('Hello World')
+		// res.statusCode = 200
+		// res.setHeader('Content-Type', 'application/json')
+		// res.end('Hello World')
 
 		if (req.url !== '/update-portal-app') {
 			return
